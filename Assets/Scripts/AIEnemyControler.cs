@@ -10,6 +10,7 @@ public class AIEnemyControler : MonoBehaviour {
     public static bool GiveDamage = false;
     Animator anim;
     GameObject target;
+    public AudioSource Machete;
     public UnityEngine.AI.NavMeshAgent agent { get; private set; }
     // Start is called before the first frame update
     void Start () {
@@ -45,6 +46,7 @@ public class AIEnemyControler : MonoBehaviour {
             anim.SetBool ("isAttack", true);
             anim.SetBool ("isWalk", false);
             GiveDamage = true;
+            Machete.Play ();
         }
     }
 

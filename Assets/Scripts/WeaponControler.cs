@@ -17,6 +17,9 @@ public class WeaponControler : MonoBehaviour {
     public static int ammoMag = 90;
     public Slider healthBar;
     [SerializeField] Camera FPSCamera, TPSCamera;
+    public AudioSource AK45Shot;
+    public AudioSource ShotgunShot;
+    public AudioSource WeaponReload;
     // Start is called before the first frame update
     void Start () {
         ammo = ammoStock;
@@ -32,6 +35,7 @@ public class WeaponControler : MonoBehaviour {
         if (Input.GetButton ("Reload") && ammo < ammoStock) {
             if (ammoMag != 0) {
                 trigger = false;
+                WeaponReload.Play ();
                 StartCoroutine (waitReload ());
             } else {
                 Debug.Log ("peluru habis");
@@ -71,6 +75,8 @@ public class WeaponControler : MonoBehaviour {
 
     public void Shoot () {
         if (ammo != 0) {
+            AK45Shot.Play ();
+            ShotgunShot.Play ();
             RaycastHit hit;
             Ray ray = new Ray (transform.position, transform.forward);
             if (Physics.Raycast (ray, out hit, range)) {

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
     public GameObject Enemy;
-    // St art is called before the first frame update
-    void Start () {
-        StartCoroutine (StartSpawning ());
+    
+    // Start is called before the first frame update
+    void Start() {
+        StartCoroutine(StartSpawning());
     }
 
-    IEnumerator StartSpawning () {
-        yield return new WaitForSeconds (Random.Range (7f, 10f));
-        Instantiate (Enemy, transform.position, Quaternion.identity);
-        StartCoroutine (StartSpawning ());
+    IEnumerator StartSpawning() {
+        yield return new WaitForSeconds(Random.Range(7f, 10f));
+        Instantiate(Enemy, transform.position, Quaternion.identity);
+        StartCoroutine(StartSpawning());
     }
 }

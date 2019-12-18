@@ -6,7 +6,7 @@ public class AmmoBox : MonoBehaviour {
 
     void OnTriggerEnter(Collider col) {
         if (col.gameObject.CompareTag("Player")) {
-            WeaponController.ammoMag = 90;
+            WeaponControler.ammoMag = 90;
         }
     }
 }

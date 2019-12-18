@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         ScoreText.text = "Score : " + score;
-        AmmoText.text = WeaponController.ammo + "/" + WeaponController.ammoMag;
+        AmmoText.text = WeaponControler.ammo + "/" + WeaponControler.ammoMag;
     }
     
     public void ResetScore() {

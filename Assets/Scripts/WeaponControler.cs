@@ -17,7 +17,7 @@ public class WeaponControler : MonoBehaviour {
     public static int ammoMag = 90;
     public Slider healthBar;
     [SerializeField] Camera FPSCamera, TPSCamera;
-    public AudioSource AK45Shot;
+    public AudioSource AK47Shot;
     public AudioSource ShotgunShot;
     public AudioSource WeaponReload;
     // Start is called before the first frame update
@@ -75,7 +75,7 @@ public class WeaponControler : MonoBehaviour {
 
     public void Shoot () {
         if (ammo != 0) {
-            AK45Shot.Play ();
+            AK47Shot.Play ();
             ShotgunShot.Play ();
             RaycastHit hit;
             Ray ray = new Ray (transform.position, transform.forward);
